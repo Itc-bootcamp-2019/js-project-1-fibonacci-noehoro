@@ -14,4 +14,4 @@ function calc(index) {
 
 calc(y);
 
-text.innerText = `The Fibonacci of ${y} is ${set[]}`;
+text.innerText = `The Fibonacci of ${y} is ${set[y]}`;
