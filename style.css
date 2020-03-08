@@ -3,6 +3,9 @@
 }
 
 
+body *:hover{
+  border:1px solid green;
+}
 .collum {
   flex-direction: column;
 }
@@ -21,7 +24,7 @@ body {
   height: 30%;
   justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: left;
 }
 
 h1 {
@@ -38,17 +41,19 @@ h4 {
   margin: 0;
   text-decoration: underline;
   margin-left: 5%;
+  
 }
 
 .subtitle {
   width: 95%;
   justify-content: left;
+  margin-top: 5%;
 }
 
 .subtitle .box {
   align-items: center;
   justify-content: left;
-  width: 60%;
+  width: 80%;
   height: 100%;
 }
 
@@ -60,7 +65,7 @@ h4 {
 }
 
 form {
-  width: 50%;
+  width: 37.5%;
   justify-content: space-evenly;
 }
 
@@ -77,6 +82,44 @@ button {
   text-align: center;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  
+  height: 85%;
   color: #ffffff;
+}
+
+
+#alert-row{
+  width:27%;
+  height:20%;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1%;
+}
+
+.alert.alert-danger.parent{
+  padding: 0;
+  font-size: x-small;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  height:70%;
+}
+
+h4 p{
+  color:red;
+  text-decoration: none;
+  font-size: smaller;
+}
+
+.hide{
+  display: none;
+}
+
+#error{
+  color: red;
+  margin-left: 5%;
+  margin-top: 1.5%;
+}
+
+#spinner{
+  margin-left: 5%;
 }

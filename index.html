@@ -40,14 +40,20 @@
       <div class="subtitle parent">
         <div class="parent box">
           <form>
-            The Fibonacci Of:  <input type="text" name="fname" id="question" />
+            The Fibonacci Of: <input type="text" inputmode="numeric" name="fname" id="input" />
           </form>
-          <button onclick="buttonClicked()">Is</button>
+          <button id="button">Is</button>
           <h4 id="answer"></h4>
+          <h6 id="error"></h6>
+          <div id="spinner" class="spinner-border hide" ></div>
+        </div>
+      </div>
+      <div class="parent hide" id="alert-row">
+        <div class="alert alert-danger parent">
+          <strong id="alert-message"></strong>
         </div>
       </div>
     </div>
-
     <script src="main.js"></script>
   </body>
 </html>
