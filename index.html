@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="parent">
+  <body class="parent collum">
     <div class="parent box collum" style="align-items: normal;">
       <div class="parent text text-center">
         <h1>Fibonacci Calculator</h1>
@@ -40,12 +40,12 @@
       <div class="subtitle parent">
         <div class="parent box">
           <form>
-            The Fibonacci Of: <input type="text" inputmode="numeric" name="fname" id="input" />
+            The Fibonacci Of: <input type="text" name="fname" id="input" />
           </form>
-          <button id="button">Is</button>
-          <h4 id="answer"></h4>
-          <h6 id="error"></h6>
-          <div id="spinner" class="spinner-border hide" ></div>
+          <button id="button" class="adjust">Is</button>
+          <h4 id="answer" class="adjust"></h4>
+          <h6 id="error" class="adjust"></h6>
+          <div id="spinner" class="adjust spinner-border hide"></div>
         </div>
       </div>
       <div class="parent hide" id="alert-row">
@@ -53,6 +53,10 @@
           <strong id="alert-message"></strong>
         </div>
       </div>
+    </div>
+    <div class="parent collum list">
+      <h2>Results</h2>
+      <ul id="results"></ul>
     </div>
     <script src="main.js"></script>
   </body>

@@ -40,6 +40,15 @@ function validation(x) {
   }
 }
 
+function json2array(json) {
+  var result = [];
+  var keys = Object.keys(json);
+  keys.forEach(function(key) {
+    result.push(json[key]);
+  });
+  return result;
+}
+
 function buttonClicked() {
   let answer = document.getElementById("answer");
   let error = document.getElementById("error");
@@ -53,7 +62,7 @@ function buttonClicked() {
       .then(response => {
         if (response.status === 400) {
           return response.text();
-        } else if (response.status === 200) {
+        } else if (response.ok) {
           return response.json();
         }
       })
@@ -66,6 +75,37 @@ function buttonClicked() {
           hide("spinner");
           show("error");
           error.innerText = data;
+        }
+      });
+    fetch("http://localhost:5050/getFibonacciResults")
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        const sortedActivities = data.results.sort(
+          (a, b) => b.createdDate - a.createdDate
+        );
+        console.log(sortedActivities);
+        let list = document.getElementById("results");
+        list.innerHTML = ""; //resets the list
+        for (let index of sortedActivities) {
+          let time = new Date(index.createdDate);
+          time = time.toString();
+          let message = `${index.number} was done at ${time}`;
+          console.log(`${index.number} was done at ${time}`);
+          list.innerHTML +=
+            "<li>" +
+            "The Fibonacci of " +
+            "<span class='number'>" +
+            index.number +
+            "</span>" +
+            " is " +
+            "<span class='number'>" +
+            index.result +
+            "</span>" +
+            " Calculated at: " +
+            time +
+            "</li>";
         }
       });
   }

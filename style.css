@@ -2,25 +2,23 @@
   display: flex;
 }
 
-
-body *:hover{
-  border:1px solid green;
-}
 .collum {
   flex-direction: column;
 }
 
 body {
-  height: 100vh;
-  padding-left: 150px;
-  padding-top: 50px;
+  height: auto;
+  margin: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   justify-content: left;
   align-items: top;
   display: flex;
 }
 
 .box {
-  width: auto;
   height: 30%;
   justify-content: center;
   align-items: center;
@@ -41,7 +39,6 @@ h4 {
   margin: 0;
   text-decoration: underline;
   margin-left: 5%;
-  
 }
 
 .subtitle {
@@ -61,12 +58,16 @@ h4 {
   width: 20%;
   border-radius: 10%;
   border: 0.5px solid black;
-  margin-left: 5%;
 }
 
 form {
-  width: 37.5%;
   justify-content: space-evenly;
+  width: auto;
+}
+
+.adjust{
+  position: relative;
+  right: 15%;
 }
 
 button {
@@ -82,44 +83,89 @@ button {
   text-align: center;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  height: 85%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
   color: #ffffff;
 }
 
-
-#alert-row{
-  width:27%;
-  height:20%;
+#alert-row {
+  width: 188px;
+  height: 20%;
   justify-content: flex-end;
   align-items: center;
   margin-top: 1%;
 }
 
-.alert.alert-danger.parent{
+.alert.alert-danger.parent {
   padding: 0;
   font-size: x-small;
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 2%;
-  height:70%;
+  height: 70%;
+  padding-bottom: 2%;
 }
 
-h4 p{
-  color:red;
+h4 p {
+  color: red;
   text-decoration: none;
   font-size: smaller;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-#error{
+#error {
   color: red;
   margin-left: 5%;
   margin-top: 1.5%;
 }
 
-#spinner{
+#spinner {
   margin-left: 5%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  border-bottom: 1px solid black;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 79px;
+  color: #373a3c;
+  margin: 0;
+  width: auto;
+}
+
+.list {
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 45px;
+  line-height: 79px;
+  color: #373a3c;
+  margin: 0;
+}
+
+.number {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.none {
+  text-decoration: none;
+  font-weight: 100;
 }
