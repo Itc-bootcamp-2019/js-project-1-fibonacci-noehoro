@@ -67,7 +67,7 @@ form {
 
 .adjust{
   position: relative;
-  right: 15%;
+  right: 10%;
 }
 
 button {
@@ -94,6 +94,16 @@ button {
   justify-content: flex-end;
   align-items: center;
   margin-top: 1%;
+}
+
+#save-row {
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2%;
+}
+
+#save-row input span{
+  margin-left: 5%;
 }
 
 .alert.alert-danger.parent {

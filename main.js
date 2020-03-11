@@ -49,7 +49,22 @@ function json2array(json) {
   return result;
 }
 
+function fib(num) {
+  if (num === 0 || num === 1) {
+    return num;
+  } else {
+    return fib(num - 2) + fib(num - 1);
+  }
+}
+
 function buttonClicked() {
+  let checkBox = document.getElementById("check");
+  let isChecked;
+  if (checkBox.checked) {
+    isChecked = true;
+  } else {
+    isChecked = false;
+  }
   let answer = document.getElementById("answer");
   let error = document.getElementById("error");
   hide("answer");
@@ -57,7 +72,7 @@ function buttonClicked() {
   hide("alert-row");
   show("spinner");
   let index = document.getElementById("input").value;
-  if (validation(index)) {
+  if (validation(index) && isChecked) {
     fetch("http://localhost:5050/fibonacci/" + index)
       .then(response => {
         if (response.status === 400) {
@@ -91,8 +106,6 @@ function buttonClicked() {
         for (let index of sortedActivities) {
           let time = new Date(index.createdDate);
           time = time.toString();
-          let message = `${index.number} was done at ${time}`;
-          console.log(`${index.number} was done at ${time}`);
           list.innerHTML +=
             "<li>" +
             "The Fibonacci of " +
@@ -108,6 +121,12 @@ function buttonClicked() {
             "</li>";
         }
       });
+  } else if (!isChecked) {
+    console.log("HA");
+    console.log(fib(index));
+    answer.innerHTML = fib(index);
+    hide("spinner");
+    show("answer");
   }
 }
 
