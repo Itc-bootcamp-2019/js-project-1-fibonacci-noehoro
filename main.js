@@ -27,10 +27,6 @@ function validation(x) {
       error("Must be smaller than 50!");
       return false;
       break;
-    case isNaN(x):
-      error("Must be a number!");
-      return false;
-      break;
     case x % 1 !== 0:
       error("Cannot be a decimal!");
       return false;
@@ -100,13 +96,12 @@ function buttonClicked() {
         const sortedActivities = data.results.sort(
           (a, b) => b.createdDate - a.createdDate
         );
-        console.log(sortedActivities);
         let list = document.getElementById("results");
-        list.innerHTML = ""; //resets the list
+        let results = "";
         for (let index of sortedActivities) {
           let time = new Date(index.createdDate);
           time = time.toString();
-          list.innerHTML +=
+          results +=
             "<li>" +
             "The Fibonacci of " +
             "<span class='number'>" +
@@ -120,14 +115,14 @@ function buttonClicked() {
             time +
             "</li>";
         }
+        list.innerHTML = results; //only send it to the HTML once and more many times
       });
-  } else if (!isChecked) {
-    console.log("HA");
-    console.log(fib(index));
+  } else if (validation(index) && !isChecked) {
     answer.innerHTML = fib(index);
     hide("spinner");
     show("answer");
   }
 }
 
-document.getElementById("button").addEventListener("click", buttonClicked);
+let btn = document.getElementById("button");
+btn.addEventListener("click", buttonClicked);
